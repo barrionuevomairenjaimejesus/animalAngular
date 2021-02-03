@@ -1,0 +1,21 @@
+<div *ngIf="animal != undefined">
+	<!--  la condición devuelve lo mismo si ponemos solo "animal"-->
+	<h2>{{animal.nombre | uppercase}} detalles</h2>
+	<div><span>id: </span>{{animal.id}}</div>
+	<div>
+		<label
+      >Nombre:
+      <input [(ngModel)]="animal.nombre" placeholder="nombre" />
+    </label>
+		<br />
+		<label
+      >Peso de animal:
+      <input #animalPeso [(ngModel)]="animal.peso" placeholder="peso" />
+    </label>
+	</div>
+	<br>
+	<button (click)="goBack()">Volver atras</button>
+	<br>
+	<br>
+	<button (click)="save(animalPeso.value)">GUARDAR CAMBIOS</button>
+</div>
